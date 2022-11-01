@@ -144,9 +144,9 @@ jsforce connection support CRUD methods for salesforce integration
     });
 ```
 
-## Support
+## Find Me
 
-For support, email acekmegamen16@gmail.com or join my Discord Server.
+If you want to Find me , email acekmegamen16@gmail.com or join my Discord Server.
 
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://trailblazer.me/id/azispakaya)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/acekbecek182)
