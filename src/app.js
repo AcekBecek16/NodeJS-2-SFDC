@@ -27,7 +27,7 @@ const conn = new jsforce.Connection({
 
 conn.login(sf_username, sf_password, function(err, userInfo) {
     if (err) { return console.error(err); }
-    // console.log("Access_Token: "+conn.accessToken);
+    console.log("Access_Token: "+conn.accessToken);
     console.log("Instance_URL: "+conn.instanceUrl);
     console.log("User ID: " + userInfo.id);
     console.log("Org ID: " + userInfo.organizationId);
