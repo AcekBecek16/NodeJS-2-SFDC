@@ -146,5 +146,4 @@ jsforce connection support CRUD methods for salesforce integration
 
 ### Support
 
-For support, email fake@fake.com or join our Slack channel.
-----------------------------------------------------------------
+For support, email acekmegamen16@gmail.com or join my Discord Server.
