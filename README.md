@@ -31,11 +31,7 @@ var defaults = {
 
 #### dotenv
 
-Configure salesforce Authorization 
-
-```bash
-   .env
-```
+Configure salesforce Authorization. create `.env` file and configure your salesforce authenticate
 
 ```bash
 SF_USERNAME = "user@salesforce.com"
