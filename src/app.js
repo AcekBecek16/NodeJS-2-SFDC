@@ -1,7 +1,7 @@
 /**
- * Class    'HTTPs-POST : NodeJS-2-Salesforce'
  * Author   'AcekBecek'
  * Twitter  '@acekbecek16'
+ * Desc     'Sample Node-2-SFDC'
  */
 
 const express = require('express')
@@ -35,33 +35,7 @@ conn.login(sf_username, sf_password, function(err, userInfo) {
    
   });
 
-conn.sobject("Account").retrieve('0015g00000zz5XqAAI', function(err, result){
-    if(err){return console.error(err)}
-    app.get('/single_account', (req, res)=>{
-        //console.log(JSON.stringify(result))
-        res.send(JSON.stringify(result))
-    })
-})
+  // Write Your Code Here
 
-// conn.sobject("Account").retrieve([
-//     "0015g00000zz5XqAAI",
-//     "0015g00000q9MscAAE"
-//   ], function(err, accounts) {
-//     if (err) { return console.error(err); }
-    
-//     app.get('/Accounts', (req, res)=>{  
-//         res.send(JSON.stringify(accounts))
-//     })
-//   });
-
-// const records = [];
-// conn.query("SELECT Id, Name, Phone, Type, BillingCity, Website FROM Account", function(err, result) {
-//     if (err) { return console.error(err); }
-//     console.log("Your Total Account : " + result.totalSize);
-//     //console.log("fetched : " + result.records.length);
-//     app.get('/Account', (req, res)=>{
-//         res.send(JSON.stringify(result))
-//     })
-// });
 
 app.listen(port, () => console.log(`Your Server Running ${port}!`))
