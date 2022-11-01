@@ -115,3 +115,36 @@ jsforce connection support CRUD methods for salesforce integration
         // ...
     });
 ```
+
+#### Create Single Records
+```javascript
+    // Single record creation
+    conn.sobject("Account").create({ Name : 'My Account #1' }, function(err, ret) {
+        if (err || !ret.success) { return console.error(err, ret); }
+        console.log("Created record id : " + ret.id);
+        // ...
+    });
+```
+
+#### Create Multi Records
+```javascript
+    // Multiple records creation
+    conn.sobject("Account").create([
+        { Name : 'My Account #1' },
+        { Name : 'My Account #2' }
+    ],
+        function(err, rets) {
+        if (err) { return console.error(err); }
+        for (var i=0; i < rets.length; i++) {
+            if (rets[i].success) {
+            console.log("Created record id : " + rets[i].id);
+            }
+        }
+        // ...
+    });
+```
+
+### Support
+
+For support, email fake@fake.com or join our Slack channel.
+----------------------------------------------------------------
