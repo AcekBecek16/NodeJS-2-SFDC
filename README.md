@@ -15,7 +15,7 @@ Install my-project with npm
 
 #### connection.js
 
-Update `instanceUrl` to your salesforce domain and change `version` 
+Update `instanceUrl` to your salesforce domain and change API `version` 
 
 ```bash
    cd /node_modules/jsforce/lib/connection.js
@@ -23,9 +23,9 @@ Update `instanceUrl` to your salesforce domain and change `version`
 
 ```javascript
     var defaults = {
-    loginUrl: "https://login.salesforce.com", 
-    instanceUrl: "https://yourdomain.lightning.force.com/", 
-    version: "55.0"
+        loginUrl: "https://login.salesforce.com", 
+        instanceUrl: "https://yourdomain.lightning.force.com/", 
+        version: "55.0"
     };
 ```
 
@@ -82,5 +82,21 @@ Use this code to connect your NodeJS application to salesforce
         console.log("Org ID: " + userInfo.organizationId);
         console.log("You Successfuly Login. Welcome!");
     
+    });
+```
+
+## How to Use
+
+### CURD
+
+jsforce connection support CRUD methods for salesforce integration
+
+### Retrieve single record
+```javascript
+    // Single record retrieval
+    conn.sobject("Account").retrieve("0017000000hOMChAAO", function(err, account) {
+    if (err) { return console.error(err); }
+    console.log("Name : " + account.Name);
+    // ...
     });
 ```
