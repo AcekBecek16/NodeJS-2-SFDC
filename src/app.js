@@ -13,7 +13,7 @@ require('dotenv').config()
 const client_secret = process.env.SF_CLIENT_SECRET
 const clent_id = process.env.SF_CLIENT_ID
 const sf_username = process.env.SF_USERNAME
-const sf_password = process.env.SF_PASSWORD
+const sf_password = process.env.SF_PASSWORD+""+process.env.SF_USER_TOKEN
 const sf_url = 'https://login.salesforce.com/'
 
 const conn = new jsforce.Connection({
