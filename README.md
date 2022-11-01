@@ -45,14 +45,14 @@ Configure salesforce Authorization. create `.env` file and configure your salesf
 
 Use this code to connect your NodeJS application to salesforce
 
-### import package
+#### Import Package
 
 ```javascript
     const jsforce = require('jsforce') // import jsforce package
     require('dotenv').config() // import dotenv function
 ```
 
-### write OAuth2.0 for get Access Token
+#### Write OAuth2.0 for get Access Token
 
 ```javascript
     const client_secret = process.env.SF_CLIENT_SECRET
@@ -71,7 +71,7 @@ Use this code to connect your NodeJS application to salesforce
     });
 ```
 
-### Create Login Request to Salesforce
+#### Create Login Request to Salesforce
 
 ```javascript
     conn.login(sf_username, sf_password, function(err, userInfo) {
@@ -91,12 +91,27 @@ Use this code to connect your NodeJS application to salesforce
 
 jsforce connection support CRUD methods for salesforce integration
 
-### Retrieve single record
+#### Retrieve Single Record
 ```javascript
     // Single record retrieval
     conn.sobject("Account").retrieve("0017000000hOMChAAO", function(err, account) {
-    if (err) { return console.error(err); }
-    console.log("Name : " + account.Name);
-    // ...
+        if (err) { return console.error(err); }
+        console.log("Name : " + account.Name);
+        // ...
+    });
+```
+
+#### Retrieve Multi Records
+```javascript
+    // multi record retrieval
+    conn.sobject("Account").retrieve([
+        "0017000000hOMChAAO",
+        "0017000000iKOZTAA4"
+        ], function(err, accounts) {
+        if (err) { return console.error(err); }
+        for (var i=0; i < accounts.length; i++) {
+            console.log("Name : " + accounts[i].Name);
+        }
+        // ...
     });
 ```
