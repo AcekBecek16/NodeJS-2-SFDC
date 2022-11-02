@@ -107,7 +107,7 @@ jsforce connection support CRUD methods for salesforce integration
     conn.sobject("Account").retrieve([
         "0017000000hOMChAAO",
         "0017000000iKOZTAA4"
-        ], function(err, accounts) {
+    ], function(err, accounts) {
         if (err) { return console.error(err); }
         for (var i=0; i < accounts.length; i++) {
             console.log("Name : " + accounts[i].Name);
